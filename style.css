@@ -1,0 +1,154 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(fonts/Roboto-Light.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(fonts/Roboto-Bold.ttf);
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    user-select: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.state-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px;
+    gap: 16px;
+    padding: 16px;
+}
+
+.heading-container {
+    background: lightgray;
+    padding: 16px;
+    width: 100%;
+}
+
+.heading {
+    font-size: 48px;
+    color: #666;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.state-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 5px;
+    width: 100%;
+}
+
+
+.state {
+    border: 10px solid #eee;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(.215, .61, .355, 1);
+}
+
+.state:hover {
+    transform: scale(0.95);
+}
+
+.state-name {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.population {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: #857F7F
+}
+
+.letters-and-button-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.letters-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.letter-container {
+    background: #DDD;
+    height: 30px;
+    width: 30px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(.215, .61, .355, 1);
+}
+
+.letter-container:hover {
+    transform: translateY(-5px);
+}
+
+.letter {
+    font-size: 24px;
+    color: #000;
+}
+
+.button {
+    border-radius: 10px;
+    background: #eee;
+    padding: 8px;
+    cursor: pointer;
+    border: 2px solid #000;
+    font-size: 24px;
+}
+
+@media (max-width: 800px) {
+    .state-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .letters-and-button-cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .state-container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+
+    .button {
+        font-size: 16px;
+    }
+
+}
